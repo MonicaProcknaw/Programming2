@@ -1,0 +1,36 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+
+ class Monster{
+    public:
+    int health;
+    int strength;
+    Monster(int h, int s) // health = h; strength = s;
+ };
+  class Player{
+    public:
+    int health;
+    int strength;
+    Player(int h, int s)
+ };
+  void monsterAttack(vector<Monster>& monsters, Player& player){
+    for (Monster& m : monsters){
+      player.health -= m.strength;
+      }
+ };
+ int main(){
+     vector<Monster> monsters;
+     monsters.push_back(Monster(10, 3));
+     monsters.push_back(Monster(10, 3));
+     Player player(5, 20);
+     monsterAttack(monsters, player);
+     if (player.health <= 20){
+        cout << "Test passed!" << endl;
+     }
+    else{
+        cout << "Test failed!" << endl;
+    }
+        return 0;
+ };
